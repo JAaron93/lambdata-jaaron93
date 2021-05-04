@@ -2,15 +2,12 @@
 
 import pandas as pd
 import numpy as np
-import random
 import pytest
 from sklearn.model_selection import train_test_split
 
 def null_count(df):
 """This function will return the number of null values contained within a DataFrame"""
-    null_sum = df.isnull().sum().sum()
-
-    return null_sum
+    return df.isnull().sum().sum()
 
 
 def train_test_split(df, frac):
@@ -25,4 +22,4 @@ Frac referes to the precent of data you would like to set aside for training."""
                                    random_state=72
                                    )
                                    
-    return (train, test)
+    return train, test
