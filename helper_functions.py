@@ -6,13 +6,13 @@ import pytest
 from sklearn.model_selection import train_test_split
 
 def null_count(df):
-"""This function will return the number of null values contained within a DataFrame"""
+    """This function will return the number of null values contained within a DataFrame"""
     return df.isnull().sum().sum()
 
 
 def train_test_split(df, frac):
-"""Create a Train/Test split function for a dataframe and returns both the Training and Testing sets. 
-Frac referes to the precent of data you would like to set aside for training."""
+    """Create a Train/Test split function for a dataframe and returns both the Training and Testing sets. 
+    Frac referes to the precent of data you would like to set aside for training."""
     frac = .80
     train, test = train_test_split(
                                    df,
@@ -22,4 +22,4 @@ Frac referes to the precent of data you would like to set aside for training."""
                                    random_state=72
                                    )
                                    
-    return train, test
+    return train, test 
