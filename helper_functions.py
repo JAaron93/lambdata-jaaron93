@@ -16,9 +16,9 @@ def train_test_split(df, frac):
     train, test = train_test_split(
                                    df,
                                    train_size=frac,
-                                   test_size=.20,
-                                   shuffle=True, 
+                                   #test_size=.20, 
                                    random_state=72
                                    )
                                    
-    return train, test 
+    return (train, test)
+
