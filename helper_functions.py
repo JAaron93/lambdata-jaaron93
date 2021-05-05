@@ -18,10 +18,12 @@ def train_test_split(df, frac):
     """Create a Train/Test split function for a dataframe and returns both
     the Training and Testing sets."""
     """Frac referes to the precent of data you would like to set aside for
-     training."""
+    training."""
+    frac=0.8
     train, test = skl_train_test_split(
-        df, 
-        train_size=frac)
+                                       df, 
+                                       train_size=frac
+                                       )
     return train, test
 
 
