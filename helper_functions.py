@@ -2,6 +2,7 @@
 
 import pandas as pd
 import numpy as np
+from sklearn.model_selection import train_test_split
 from sklearn.utils import shuffle
 import pytest
 
@@ -31,6 +32,16 @@ def addy_split(addy_series):
                        "zip": zips
                        })
     return df
+
+# Third function. Train Test Split
+def train_test_split(df, frac):
+    """Create a train/test split function for a data frame that returns both the
+    training and test sets.  'frac' refers to the percent of data you would
+    like to set aside for training"""
+    cutoff = df.index < int(df.shape[0] * frac)
+    df_train = df.loc[cutoff]
+    df_test = df.loc[~cutoff]
+    return df_train, df_test
 
 #   TODO - Implement more helper functions by Friday
 
