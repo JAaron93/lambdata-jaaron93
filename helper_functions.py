@@ -14,7 +14,7 @@ def null_count(df):
 
 
 # Train/Test split fuction for a DataFrame that returns both training and test sets
-frac = 0.8
+frac = 0.5
 def train_test_split(df, frac):
     """Create a Train/Test split function for a dataframe and returns both
     the Training and Testing sets."""
