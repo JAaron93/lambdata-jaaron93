@@ -16,7 +16,7 @@ class CleanData:
 
 
 # Confirms whether or not a DataFrame contains missing values
-    def null_count(df):
+    def null_count(self, df):
         """
         This function will return the number of null values contained
         within a DataFrame
@@ -24,7 +24,7 @@ class CleanData:
         return df.isnull().sum().sum()
 
     # Randomizer
-    def randomize(df, seed):
+    def randomize(self, df, seed):
         """
         What it does is stated by the comment
         """
