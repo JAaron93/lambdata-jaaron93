@@ -14,12 +14,11 @@ def null_count(df):
 
 
 # Train/Test split fuction for a DataFrame that returns both training and test sets
-def train_test_split(df, frac):
+def train_test_split(df, frac=0.2):
     """Create a Train/Test split function for a dataframe and returns both
     the Training and Testing sets."""
     """Frac referes to the precent of data you would like to set aside for
     training."""
-    frac=0.8
     train, test = skl_train_test_split(
                                        df, 
                                        train_size=frac
