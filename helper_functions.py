@@ -12,17 +12,24 @@ def null_count(df):
     within a DataFrame"""
     return df.isnull().sum().sum()
 
+# Adress Split 
+def addy_split(addy_series):
+    """Splits addresses into these three columns (df['city'], df['state'],
+    & df['zip']"""
+    cities = []
+    states = []
+    zips = []
+    for addy in addy_series:
+        split_addy_1 = addy.split(",")
+        cities.append(split_addy_1[0].split("\n")[1])
+        states.append(split_addy_1[1].split(" ")[1])
+        zips.append(split_addy_1[1].split(" ")[2])
 
-# Develops a randomized function that shuffles around a DataFrames cells before returning it.
-# Function takes a randomized seed for reproducibility
-def randomize(df, seed=101):
-    """
-    Randomize takes df and an integer as arguments before randomly
-    shuffling dfs values
-    """
-    df = df.copy()
-    columns = df.columns[seed]
-    df = shuffle(df[columns], random_state=seed)
+    df = pd.DataFrame({
+                       "city": cities,
+                       "state": states,
+                       "zip": zips
+                       })
     return df
 
 #   TODO - Implement more helper functions by Friday
