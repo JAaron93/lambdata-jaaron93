@@ -20,8 +20,14 @@ def train_test_split(df, frac):
     the Training and Testing sets."""
     """Frac referes to the precent of data you would like to set aside for
     training."""
-    train, test = train_test_split(df, train_size=frac)
-    return train, test
+    arr_random = np.random.rand(df.shape[0])
+    split = arr_random < np.percentile(
+                                       arr_random,
+                                       (frac*100)
+                                       )
+    test = df[split]
+    train = df[~split]
+    return test, train
 
 #   TODO - Implement more helper functions by Friday
 
