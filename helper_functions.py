@@ -16,11 +16,11 @@ def null_count(df):
 # Develops a randomized function that shuffles around a DataFrames cells before returning it.
 # Function takes a randomized seed for reproducibility
 def randomize(seed):
-        """
-        Randomize takes df and an integer as arguments before randomly
-        shuffling dfs values
-        """
-        return shuffle(df, random_state=seed)
+    """
+    Randomize takes df and an integer as arguments before randomly
+    shuffling dfs values
+    """
+    return shuffle(df, random_state=seed)
 
 #   TODO - Implement more helper functions by Friday
 
