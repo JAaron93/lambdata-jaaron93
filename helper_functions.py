@@ -5,13 +5,14 @@ import numpy as np
 import pytest
 from sklearn.model_selection import train_test_split
 
-
+# Confirms whether or not a DataFrame contains missing values
 def null_count(df):
     """This function will return the number of null values contained
     within a DataFrame"""
     return df.isnull().sum().sum()
 
 
+# Train/Test split fuction for a DataFrame that returns both training and test sets
 def train_test_split(df, frac):
     """Create a Train/Test split function for a dataframe and returns both
     the Training and Testing sets."""
@@ -19,18 +20,21 @@ def train_test_split(df, frac):
      training."""
     train, test = train_test_split(
                                    df,
-                                   train_size=frac,
-                                   random_state=72
+                                   train_size=frac
                                    )
 
-    return (train, test)
+    return train, test
 
 
-def abbr_2_st(state_series, abbr_2_st=True):
-    """Return a new column with the full name from a State abbreviation column ->
-    An input of FL would return Florida. This function should also take a
-    boolean (abbr_2_state) and when False takes full state names and
-    return state abbreviations. -> An input of Florida would return Fl."""
-
+# Randomized function that randomizes all of a DataFrames cells before returning it
+def randomize(df, seed):
+    df = df.sample(
+                   frac = 1,
+                   axis = 1,
+                   random_state = 42).sample(
+                                            frac = 1,
+                                            random_state = 59
+                                            ).reset_index(drop = True)
+    return df
 
 
