@@ -12,16 +12,6 @@ def null_count(df):
     within a DataFrame"""
     return df.isnull().sum().sum()
 
-# Train Test Split   
-def train_test_split(df, frac):
-    """This function splits data using train_test_split and returns two sets"""
-    train, test = train_test_split(
-                                   df,
-                                   train_size=frac,
-                                   random_state =42
-                                   )
-    return (train, test)
-
 # Randomizer
 def randomize(df, seed):
     """What it does is in the comment"""
