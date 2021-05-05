@@ -14,15 +14,20 @@ def null_count(df):
 
 
 # Train/Test split fuction for a DataFrame that returns both training and test sets
-def train_test_split(df, frac=0.2):
+frac = 0.8
+def train_test_split(df, frac):
     """Create a Train/Test split function for a dataframe and returns both
     the Training and Testing sets."""
     """Frac referes to the precent of data you would like to set aside for
     training."""
-    train, test = skl_train_test_split(
-                                       df, 
-                                       train_size=frac
+    arr_random = np.random.rand(df.shape[0])
+    split = arr_random < np.percentile(
+                                       arr_random,
+                                       (frac*100)
                                        )
-    return train, test
+    df_test = df[split]
+    df_train = df[~split]
+    return df_test, df_train
 
+#   TODO - Implement more helper functions by Friday
 
