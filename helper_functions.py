@@ -3,7 +3,7 @@
 import pandas as pd
 import numpy as np
 import pytest
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split as skl_train_test_split
 
 
 # Confirms whether or not a DataFrame contains missing values
@@ -19,10 +19,9 @@ def train_test_split(df, frac):
     the Training and Testing sets."""
     """Frac referes to the precent of data you would like to set aside for
      training."""
-    arr_rand = np.random.rand(df.shape[0])
-    split = arr_rand < np.percentile(arr_rand, (frac*100))
-    df_test = df[split]
-    df_train = df[~split]
-    return df_train, df_test
+    train, test = skl_train_test_split(
+        df, 
+        train_size=frac)
+    return train, test
 
 
