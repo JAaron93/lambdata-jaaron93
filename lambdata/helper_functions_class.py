@@ -1,4 +1,6 @@
-"""Lambdata - Collection of Data Science Helper Functions"""
+"""
+Lambdata - Collection of Data Science Helper Functions
+"""
 
 import pandas as pd
 import numpy as np
@@ -26,7 +28,7 @@ class CleanData:
     # Randomizer
     def randomize(self, df, seed):
         """
-        What it does is stated by the comment
+        Eponymous comment
         """
         randomized = shuffle(
                              df,
