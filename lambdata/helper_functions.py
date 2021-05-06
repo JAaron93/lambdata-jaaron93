@@ -1,4 +1,7 @@
-"""Lambdata - Collection of Data Science Helper Functions"""
+"""
+This module contains functions for common data cleaning tasks. The functions can be used with
+data loaded into a pandas DataFrame.
+"""
 
 import pandas as pd
 import numpy as np
