@@ -6,9 +6,9 @@ import pandas as pd
 import numpy as np
 from sklearn.utils import shuffle
 import pytest
-from lambdata.helper_functions import CleanData
+from lambdata.helper_functions_class import CleanData
 
-# Reference Dataframe for CleanData, WarpData testing
+# Reference Dataframe for CleanData testing
 df = pd.DataFrame(
     np.array(
              [

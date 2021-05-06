@@ -10,7 +10,7 @@ from sklearn.utils import shuffle
 
 
 class CleanData:
-    def__init__(self):
+    def __init__(self):
         """
         Init function for instantiation of objects
         """
